@@ -17,8 +17,9 @@ public class Maze{
         Scanner inf = new Scanner(text);
         int length=0;// future rows of char
         int size=inf.nextLine().length();// future cols of char
-        while(inf.hasNextLine()){
-            line+=inf.nextLine();
+        Scanner newInf= new Scanner(text);
+        while(newInf.hasNextLine()){
+            line+=newInf.nextLine();
             length++;
         }
         maze=new char[length][size];
@@ -120,18 +121,7 @@ public class Maze{
   maze[row][col]='.';
         return -1; //so it compiles
     }
-    public static void main(String[]args) {
-    	try {
-    	Maze mazes=new Maze("data.txt");
 
-    	System.out.println(mazes);
-      mazes.solve();
-      System.out.println(mazes);
-    	}
-    	catch(FileNotFoundException e) {
-    		System.out.println("yeah");
-    	}
-    }
 
 
 }
